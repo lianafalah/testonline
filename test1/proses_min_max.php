@@ -13,9 +13,18 @@
         $nilai[$i] = $_POST["lajur_ke_$i"];
         echo "Lajur ke ".($i+1)." = ".$nilai[$i]."<br />";
     }
-    rsort($nilai); 
-
-  echo 'Output = '.$nilai[1];
+        $max=$max2=0;
+	for ($i = 0; $i < count($nilai); $i++) {
+	if ($nilai[$i] > $max) {
+	    $max2 = $max;
+	    $max = $nilai[$i];
+	} else if (($nilai[$i] > $max2) && ($nilai[$i] != $max)) {
+	    $max2 = $nilai[$i];
+	}
+	}
+echo "Output: " . $max2 . "<br/>"; 
+ 
+    
     
    
     
